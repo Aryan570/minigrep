@@ -4,8 +4,9 @@ use minigrep::{self , Config};
 fn main() {
     // step -1 : To read the command line arguments such as cargo run -- needle haystack
     // Read the command line argument with std::env::args func.
-    let args : Vec<String> = env::args().collect();
-    let config = Config::build(&args).unwrap_or_else(|err| {
+    // let args : Vec<String> = env::args().collect();
+                            //|||||||||||| returns an iterator
+    let config = Config::build(env::args()).unwrap_or_else(|err| {
         eprintln!("There was problem parsing the arguments: {err}");
         process::exit(1);
     });
