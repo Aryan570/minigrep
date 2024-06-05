@@ -34,7 +34,7 @@ impl Config {
     }
 }
 pub fn search<'a>(query : &str,contents :&'a str) -> Vec<&'a str> {
-    contents.lines().filter(|line| line.constains(query)).collect()
+    contents.lines().filter(|line| line.contains(query)).collect()
     // let mut result = Vec::new();
     // for line in contents.lines() {
     //     if line.contains(query) {
